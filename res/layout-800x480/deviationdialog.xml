@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/deviationwidget"
+    android:layout_width="420px"
+    android:layout_height="600px"
+    android:background="@drawable/deviation_bg">
+
+    <com.ols.view.HorizontalListView
+        android:id="@+id/deviationlist"
+        android:layout_width="420px"
+        android:layout_height="400px"
+        android:layout_x="40px"
+        android:layout_y="120px"
+        android:fastScrollEnabled="true"/>
+
+</AbsoluteLayout>

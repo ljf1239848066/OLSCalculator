@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="40px"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/title"
+        android:gravity="center_vertical"
+        android:text="OlSCalculator"
+        android:textColor="@android:color/white"
+        android:textSize="18px" />
+
+    <RelativeLayout
+        android:id="@+id/numxback"
+        android:layout_width="185px"
+        android:layout_height="60px"
+        android:layout_below="@id/title" >
+
+        <EditText
+            android:id="@+id/et_numx"
+            android:layout_width="180px"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/datax"
+            android:digits="0123456789-."
+            android:drawableLeft="@drawable/editedge"
+            android:singleLine="true"
+            android:textSize="24sp"
+            android:width="50px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/numyback"
+        android:layout_width="185px"
+        android:layout_height="60px"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/numxback" >
+
+        <EditText
+            android:id="@+id/et_numy"
+            android:layout_width="180px"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/datay"
+            android:digits="0123456789-."
+            android:drawableLeft="@drawable/editedge"
+            android:singleLine="true"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/adddataback"
+        android:layout_width="65px"
+        android:layout_height="60px"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/title" >
+
+        <Button
+            android:id="@+id/btn_adddata"
+            android:layout_width="60px"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/add"
+            android:focusable="true"
+            android:paddingRight="3px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomframe"
+        android:layout_width="fill_parent"
+        android:layout_height="45px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/title" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/funbtnframe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true" >
+
+        <Button
+            android:id="@+id/btn_equation"
+            android:layout_width="wrap_content"
+            android:layout_height="45px"
+            android:background="@drawable/left_no"
+            android:text="计算线性方程"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_deviation"
+            android:layout_width="wrap_content"
+            android:layout_height="45px"
+            android:layout_toRightOf="@id/btn_equation"
+            android:background="@drawable/right_no"
+            android:text="计算各组偏差"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <com.ols.view.DataView
+        android:id="@+id/lv_data"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomframe"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/numxback"
+        android:cacheColorHint="#00000000"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:focusable="false"
+        android:divider="@null"
+        android:focusableInTouchMode="true"
+        android:listSelector="@drawable/itemselected" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200px"
+        android:layout_centerInParent="true" >
+
+        <TextView
+            android:id="@+id/tvnodata"
+            android:layout_width="250px"
+            android:layout_height="100px"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:lines="3"
+            android:text="呃,\n没数据,\n快添加数据吧"
+            android:textColor="@android:color/white"
+            android:textSize="28px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="180px"
+        android:layout_centerInParent="true" >
+
+        <Button
+            android:id="@+id/btnmsg"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/input_down"
+            android:textSize="40sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/inputlayout"
+        android:layout_width="430px"
+        android:layout_height="245px"
+        android:layout_above="@id/funbtnframe"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/inputback"
+        android:visibility="invisible" >
+
+        <AbsoluteLayout
+            android:id="@+id/input"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="5px"
+                android:layout_y="5px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="1"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="90px"
+                android:layout_y="5px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="2"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="175px"
+                android:layout_y="5px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="3"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btnpoint"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="260px"
+                android:layout_y="5px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="."
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btnback"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="345px"
+                android:layout_y="5px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="←" 
+                android:textSize="18dp"/>
+
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="5px"
+                android:layout_y="85px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="4"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn5"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="90px"
+                android:layout_y="85px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="5"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn6"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="175px"
+                android:layout_y="85px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="6"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn0"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="260px"
+                android:layout_y="85px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="0"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btnclear"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="345px"
+                android:layout_y="85px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="C" 
+                android:textSize="18dp"/>
+
+            <Button
+                android:id="@+id/btn7"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="5px"
+                android:layout_y="165px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="7"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn8"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="90px"
+                android:layout_y="165px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="8"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn9"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="175px"
+                android:layout_y="165px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="9"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btnminus"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="260px"
+                android:layout_y="165px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="-"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btnfinish"
+                android:layout_width="80px"
+                android:layout_height="75px"
+                android:layout_x="345px"
+                android:layout_y="165px"
+                android:background="@drawable/btn_input"
+                android:onClick="delInput"
+                android:text="OK" 
+                android:textSize="18dp"/>
+        </AbsoluteLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

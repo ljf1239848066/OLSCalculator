@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_datalist"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="60px"
+        android:layout_centerVertical="true"
+        android:background="@drawable/number"
+        android:gravity="center"
+        android:paddingLeft="5px"
+        android:paddingRight="8px"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <ImageButton
+        android:id="@+id/ib_edit"
+        android:layout_width="60px"
+        android:layout_height="60px"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/edit"
+        android:onClick="OnItemEditClick"
+        android:paddingRight="5px" />
+
+    <TextView
+        android:id="@+id/tv_numx"
+        android:layout_width="150px"
+        android:layout_height="60px"
+        android:layout_toRightOf="@+id/tv_num"
+        android:background="@drawable/number"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_numy"
+        android:layout_width="150px"
+        android:layout_height="60px"
+        android:layout_toRightOf="@id/tv_numx"
+        android:layout_toLeftOf="@id/ib_edit"
+        android:background="@drawable/number"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+</RelativeLayout>

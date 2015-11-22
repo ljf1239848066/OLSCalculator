@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_deviationlist"
+    android:layout_width="wrap_content"
+    android:layout_height="250px" 
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/de_tv_num"
+        android:layout_width="120px"
+        android:layout_height="40px"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" 
+        android:gravity="center"
+        android:background="@drawable/dataframe"/>
+
+    <TextView
+        android:id="@+id/de_tv_numx"
+        android:layout_width="120px"
+        android:layout_height="40px"
+        android:layout_alignLeft="@id/de_tv_num"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/de_tv_num"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" 
+        android:gravity="center_vertical"
+        android:background="@drawable/dataframe"/>
+
+    <TextView
+        android:id="@+id/de_tv_numy"
+        android:layout_width="120px"
+        android:layout_height="40px"
+        android:layout_alignLeft="@id/de_tv_num"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/de_tv_numx"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" 
+        android:gravity="center_vertical"
+        android:background="@drawable/dataframe"/>
+
+    <TextView
+        android:id="@+id/de_tv_y"
+        android:layout_width="120px"
+        android:layout_height="40px"
+        android:layout_alignLeft="@id/de_tv_num"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/de_tv_numy"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" 
+        android:gravity="center_vertical"
+        android:background="@drawable/dataframe"/>
+
+    <TextView
+        android:id="@+id/de_tv_deltay"
+        android:layout_width="120px"
+        android:layout_height="40px"
+        android:layout_alignLeft="@id/de_tv_num"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/de_tv_y"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" 
+        android:gravity="center_vertical"
+        android:background="@drawable/dataframe"/>
+
+</RelativeLayout>

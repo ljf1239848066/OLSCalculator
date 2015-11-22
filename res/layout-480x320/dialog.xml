@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/adialogwidget"
+    android:layout_width="280px"
+    android:layout_height="400px"
+    android:background="@drawable/dialogback"
+    android:fadeScrollbars="true"
+    android:scrollbarDefaultDelayBeforeFade="300"
+    android:scrollbarStyle="insideOverlay"
+    android:scrollbars="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="35px"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:text="  计算结果"
+        android:textColor="@android:color/white"
+        android:textSize="18px" />
+
+    <ProgressBar 
+        android:id="@+id/progressview"
+        android:layout_width="60px"
+        android:layout_height="60px"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/ensure"
+        android:layout_width="80px"
+        android:layout_height="25px"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/sure"
+        android:text="确定"
+        android:textSize="15px" />
+
+    <com.ols.view.ResultView
+        android:id="@+id/resultview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ensure"
+        android:layout_below="@id/title" />
+
+</RelativeLayout>
